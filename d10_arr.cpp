@@ -26,8 +26,9 @@ class Solution {
 
 // 2:Next Permutation
 // https://leetcode.com/problems/next-permutation/description/
-// Approach: Found the first decreasing element and swapped it with next larger element after it and then sorted(reversed already in descending order) the after the pivot index
-
+// Approach: Found the first decreasing element(pivot) and swapped it with next larger element after it and then sorted(reversed already in descending order) after the pivot index
+// ex - arr = [4,0,8,2,7,6,3,1] here 2 is pivot and it will be swapper with 3 and then the part of arr after pivot index gets reversed
+// [4,0,8,2,7,6,3,1] -> [4,0,8,3,7,6,2,1] -> [4,0,8,3,1,2,6,7]
 class Solution {
     public:
         void nextPermutation(vector<int>& nums) {
@@ -57,3 +58,4 @@ class Solution {
 
 // TC:O(N);
 // SC:O(N);
+
