@@ -48,3 +48,29 @@ class Solution {
 
 // TC:O(N)
 // SC:O(1)
+
+// 3:Maximum Score from Subarray Minimums
+// https://www.geeksforgeeks.org/problems/max-sum-in-sub-arrays0824/0
+// Approach : Used two pointers. The answer is always between two adjacent pairs because, in a subarray
+// [a,b,c] if we consider a and c for sum it means b is greater which means eventually the answer is a,b or b,c 
+
+class Solution {
+    public:
+      // Function to find pair with maximum sum
+      int pairWithMaxSum(vector<int> &arr) {
+          int i = 0;
+          int j = i+1;
+          int sum = 0;
+          int maxi = INT_MIN;
+          while(j<arr.size()){
+              sum = arr[i]+arr[j];
+              maxi = max(sum,maxi);
+              i++;
+              j++;
+          }
+          return maxi;
+      }
+  };
+
+TC:O(N)
+SC:O(1)
