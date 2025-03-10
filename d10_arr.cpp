@@ -59,3 +59,21 @@ class Solution {
 // TC:O(N);
 // SC:O(N);
 
+// 3:Best to buy and sell stocks
+// Approach: Kept track of the minimum price before ith index so that we can calculate max profit can be earned by selling on that day
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+class Solution {
+    public:
+        int maxProfit(vector<int>& prices) {
+            int mini = prices[0];
+            int prof = INT_MIN;
+            for(int i = 0; i<prices.size(); i++){
+                prof = max(prof,prices[i] - mini);
+                mini = min(mini,prices[i]);
+            }
+            return prof;
+        }
+    };
+    
+// TC:O(N);
+// SC:O(N);
