@@ -19,3 +19,27 @@ class Solution {
     
         }
     };
+
+// q2) Remove Outermost Parentheses
+// https://leetcode.com/problems/remove-outermost-parentheses/description/
+class Solution {
+    public:
+        string removeOuterParentheses(string s) {
+            string result;
+            int rem = 0;
+            for(int i = 0;i<s.length(); i++){
+                if(s[i]=='('){
+                    if(rem > 0){
+                        result += s[i];
+                    }
+                    rem++;
+                }else{
+                    rem--;
+                    if(rem>0){
+                        result+=s[i];
+                    }
+                }
+            }
+            return result;
+        }
+    };
